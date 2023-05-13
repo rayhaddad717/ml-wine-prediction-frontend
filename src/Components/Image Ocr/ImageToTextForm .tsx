@@ -17,12 +17,13 @@ const ImageToTextForm = () => {
     formData.append("image", file);
 
     const response = await fetch(
-      "http://127.0.0.1:5000/api/convert_image_to_string",
+      "http://127.0.0.1:5000/api/wine/predict_from_image",
       {
         method: "POST",
         body: formData,
       }
     );
+
     setLoading(false);
 
     if (response.ok) {
